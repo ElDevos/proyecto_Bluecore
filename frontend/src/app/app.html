@@ -1,0 +1,18 @@
+<header class="app-header">
+  <div class="header-content">
+    <h1>Gestión de Créditos</h1>
+    <button class="nav-button" (click)="cambiarPantalla()">
+      {{ pantalla === 'forms' ? 'Ver solicitudes' : 'Nueva solicitud' }}
+    </button>
+  </div>
+</header>
+
+<main class="main-container">
+  @if (pantalla === 'forms') {
+    <app-forms />
+  }
+
+  @if (pantalla === 'lista') {
+    <app-lista />
+  }
+</main>
