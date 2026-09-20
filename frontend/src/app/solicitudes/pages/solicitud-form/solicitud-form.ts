@@ -6,6 +6,7 @@ import { SolicitudesService } from '../../services/solicitudes.service';
 import {
   formatearMiles,
   formatearMoneda,
+  formatearMonedaCompacta,
   normalizarCedula,
   parsearMonto,
 } from '../../utils/formato';
@@ -160,4 +161,5 @@ export class SolicitudForm {
   }
 
   formatearMoneda = formatearMoneda;
+  formatearMonedaCompacta = formatearMonedaCompacta;
 }

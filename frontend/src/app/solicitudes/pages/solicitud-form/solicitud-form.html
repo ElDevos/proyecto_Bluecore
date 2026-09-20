@@ -91,7 +91,8 @@
         <span class="campo__afijo" aria-hidden="true">USD</span>
       </div>
       <p class="campo__ayuda" id="ayuda-monto">
-        Entre {{ formatearMoneda(reglas.montoMinimo) }} y {{ formatearMoneda(reglas.montoMaximo) }}.
+        Entre {{ formatearMonedaCompacta(reglas.montoMinimo) }} y
+        {{ formatearMonedaCompacta(reglas.montoMaximo) }}.
         @if (montoPrevisto(); as previsto) {
           <span class="campo__previsto">Se registrará {{ previsto }}.</span>
         }
@@ -105,9 +106,9 @@
           } @else if (monto.errors?.['montoInvalido']) {
             Introduce un monto numérico válido.
           } @else if (monto.errors?.['montoMinimo']) {
-            El monto mínimo permitido es {{ formatearMoneda(reglas.montoMinimo) }}.
+            El monto mínimo permitido es {{ formatearMonedaCompacta(reglas.montoMinimo) }}.
           } @else if (monto.errors?.['montoMaximo']) {
-            El monto máximo permitido es {{ formatearMoneda(reglas.montoMaximo) }}.
+            El monto máximo permitido es {{ formatearMonedaCompacta(reglas.montoMaximo) }}.
           }
         }
       </p>
