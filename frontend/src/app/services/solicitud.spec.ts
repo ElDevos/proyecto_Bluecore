@@ -1,15 +1,19 @@
 import { TestBed } from '@angular/core/testing';
-import { Solicitud } from './solicitud';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { SolicitudService } from './solicitud';
 
-describe('Solicitud', () => {
-  let service: Solicitud;
+describe('SolicitudService', () => {
+  let service: SolicitudService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(Solicitud);
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(), provideHttpClientTesting()],
+    });
+    service = TestBed.inject(SolicitudService);
   });
 
-  it('should be created', () => {
+  it('se crea correctamente', () => {
     expect(service).toBeTruthy();
   });
 });
