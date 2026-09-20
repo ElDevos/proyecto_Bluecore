@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/solicitudes")
-@CrossOrigin(origins = "*") // Permite la conexión desde el Frontend (Angular/React/HTML)
+@CrossOrigin(origins = "http://localhost:4200") // Permite la conexión desde el Frontend
 public class SolicitudController {
 
     private final SolicitudRepository repository;
