@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { Lista } from './lista/lista';
+import { SolicitudesLista } from './solicitudes/pages/solicitudes-lista/solicitudes-lista';
 import { SolicitudForm } from './solicitudes/pages/solicitud-form/solicitud-form';
 
 type Pantalla = 'formulario' | 'listado';
@@ -7,7 +7,7 @@ type Pantalla = 'formulario' | 'listado';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SolicitudForm, Lista],
+  imports: [SolicitudForm, SolicitudesLista],
   templateUrl: './app.html',
   styleUrl: './app.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
