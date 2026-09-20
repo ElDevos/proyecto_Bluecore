@@ -70,16 +70,17 @@
         </button>
       } @else {
         <p class="vacio__titulo">Todavía no hay solicitudes registradas</p>
-        <p class="vacio__texto">
-          Crea la primera desde la pestaña «Nueva solicitud».
-        </p>
+        <p class="vacio__texto">Crea la primera desde la pestaña «Nueva solicitud».</p>
       }
     </div>
   } @else {
     <div class="tabla__marco">
       <table class="tabla" role="table">
         <caption class="solo-lectores">
-          Solicitudes de crédito, vista {{ etiquetaFiltro() }}
+          Solicitudes de crédito, vista
+          {{
+            etiquetaFiltro()
+          }}
         </caption>
         <thead>
           <tr role="row">
@@ -101,7 +102,9 @@
                 {{ formatearMoneda(solicitud.monto) }}
               </td>
               <td role="cell" data-etiqueta="Plazo">{{ solicitud.plazoMeses }} meses</td>
-              <td role="cell" data-etiqueta="Fecha">{{ formatearFecha(solicitud.fechaCreacion) }}</td>
+              <td role="cell" data-etiqueta="Fecha">
+                {{ formatearFecha(solicitud.fechaCreacion) }}
+              </td>
               <td role="cell" data-etiqueta="Estado">
                 <app-estado-badge [estado]="solicitud.estado" />
                 @if (solicitud.comentario) {

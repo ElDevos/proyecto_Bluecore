@@ -55,7 +55,9 @@
   font-size: var(--fs-base);
   color: var(--c-texto-suave);
   cursor: pointer;
-  transition: background-color var(--transicion), color var(--transicion),
+  transition:
+    background-color var(--transicion),
+    color var(--transicion),
     border-color var(--transicion);
 }
 

@@ -12,9 +12,9 @@
 
   <p id="resumen-dialogo" class="dialogo__resumen">
     Solicitud <strong>N.º {{ solicitud().id }}</strong> · cédula
-    <strong>{{ solicitud().cedula }}</strong> ·
-    <strong>{{ montoFormateado() }}</strong> a {{ solicitud().plazoMeses }} meses.
-    Pasará a <strong>{{ etiquetaDestino() }}</strong>.
+    <strong>{{ solicitud().cedula }}</strong> · <strong>{{ montoFormateado() }}</strong> a
+    {{ solicitud().plazoMeses }} meses. Pasará a <strong>{{ etiquetaDestino() }}</strong
+    >.
   </p>
 
   <div class="campo" [class.campo--invalido]="errorComentario()">

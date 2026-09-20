@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, inject, output, signal } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiError, esApiError } from '../../../core/api-error';
 import { REGLAS_SOLICITUD, Solicitud } from '../../models/solicitud.model';
 import { SolicitudesService } from '../../services/solicitudes.service';
-import { formatearMiles, formatearMoneda, normalizarCedula, parsearMonto } from '../../utils/formato';
+import {
+  formatearMiles,
+  formatearMoneda,
+  normalizarCedula,
+  parsearMonto,
+} from '../../utils/formato';
 import { validadorCedula, validadorMonto } from '../../utils/validadores';
 
 @Component({

@@ -91,8 +91,7 @@
         <span class="campo__afijo" aria-hidden="true">USD</span>
       </div>
       <p class="campo__ayuda" id="ayuda-monto">
-        Entre {{ formatearMoneda(reglas.montoMinimo) }} y
-        {{ formatearMoneda(reglas.montoMaximo) }}.
+        Entre {{ formatearMoneda(reglas.montoMinimo) }} y {{ formatearMoneda(reglas.montoMaximo) }}.
         @if (montoPrevisto(); as previsto) {
           <span class="campo__previsto">Se registrará {{ previsto }}.</span>
         }

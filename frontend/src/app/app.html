@@ -35,10 +35,7 @@
 
 <main class="contenido" id="contenido" tabindex="-1">
   @if (pantalla() === 'formulario') {
-    <app-solicitud-form
-      (creada)="alCrearSolicitud()"
-      (verListado)="irA('listado')"
-    />
+    <app-solicitud-form (creada)="alCrearSolicitud()" (verListado)="irA('listado')" />
   } @else {
     <app-solicitudes-lista [revision]="revision()" />
   }

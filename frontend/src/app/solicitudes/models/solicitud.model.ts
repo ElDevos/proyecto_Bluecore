@@ -44,7 +44,7 @@ export const ETIQUETA_ESTADO: Record<EstadoSolicitud, string> = {
 };
 
 /** Opciones del desplegable de filtro, en orden de aparición. */
-export const OPCIONES_FILTRO: ReadonlyArray<{ valor: FiltroEstado; etiqueta: string }> = [
+export const OPCIONES_FILTRO: readonly { valor: FiltroEstado; etiqueta: string }[] = [
   { valor: 'TODOS', etiqueta: 'Todas' },
   { valor: 'PENDIENTE', etiqueta: 'Pendientes' },
   { valor: 'APROBADA', etiqueta: 'Aprobadas' },
