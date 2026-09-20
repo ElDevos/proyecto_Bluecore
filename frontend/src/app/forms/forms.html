@@ -1,3 +1,18 @@
+<!-- Alerta -->
+<div class="floating-alerts">
+  @if (mensajeExito) {
+    <div class="alert alert-success">
+      {{ mensajeExito }}
+    </div>
+  }
+
+  @if (mensajeError) {
+    <div class="alert alert-error">
+      {{ mensajeError }}
+    </div>
+  }
+</div>
+
 <div class="page-container">
   <div class="credit-card">
     <div class="header">
@@ -77,8 +92,8 @@
           <input
             type="number"
             id="plazo"
-            name="plazo"
-            [(ngModel)]="solicitud.plazo"
+            name="plazoMeses"
+            [(ngModel)]="solicitud.plazoMeses"
             placeholder="Ej. 24"
             min="6"
             max="60"
