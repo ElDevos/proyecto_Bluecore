@@ -16,10 +16,10 @@ describe('App', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('muestra el título de la aplicación', async () => {
+  it('muestra la marca en la cabecera', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Gestión de Créditos');
+    expect(compiled.querySelector('h1')?.textContent).toContain('BlueCore');
   });
 });
