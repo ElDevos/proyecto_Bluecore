@@ -1,16 +1,26 @@
 package com.bluecore.backend.controller;
 
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.bluecore.backend.dto.CambiarEstadoDTO;
 import com.bluecore.backend.dto.CrearSolicitudDTO;
 import com.bluecore.backend.model.EstadoSolicitud;
 import com.bluecore.backend.model.SolicitudCredito;
 import com.bluecore.backend.repository.SolicitudRepository;
-import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/solicitudes")
@@ -52,7 +62,6 @@ public class SolicitudController {
         return repository.findById(id)
                 .map(solicitud -> {
                     solicitud.setEstado(dto.getEstado());
-                    solicitud.setComentario(dto.getComentario());
                     return ResponseEntity.ok(repository.save(solicitud));
                 })
                 .orElse(ResponseEntity.notFound().build());
