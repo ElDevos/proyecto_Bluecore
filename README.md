@@ -91,6 +91,41 @@ cd backend
 
 ---
 
+---
+
+## Ejecución con Docker
+
+Alternativa al arranque manual: un solo comando levanta la API y el frontend.
+No incluye motor de base de datos — la persistencia sigue en el clúster de
+Aurora, igual que en el arranque manual.
+
+```bash
+docker compose up --build
+```
+
+| Servicio | URL | Contenedor |
+|---|---|---|
+| Frontend (SSR) | http://localhost:4200 | `bluecore-frontend` |
+| Backend (API) | http://localhost:8080 | `bluecore-backend` |
+
+```bash
+docker compose logs -f backend   # seguir el log de la API
+docker compose down              # parar ambos servicios
+```
+
+### Credenciales
+
+Por defecto se usan las de `application.properties`, incluidas en la imagen.
+Para inyectarlas desde fuera, copia `.env.example` a `.env` y rellénalo: Spring
+Boot antepone las variables de entorno al archivo de propiedades. El `.env` está
+excluido de Git y es opcional — sin él, el compose arranca igual.
+
+> El contenedor sale a internet por la IP del host, así que el grupo de
+> seguridad de Aurora debe autorizar esa IP. Si Aurora no responde, el backend
+> no arranca: el pool de conexiones falla durante el inicio.
+
+---
+
 ## API
 
 Base: `http://localhost:8080/api/solicitudes`
